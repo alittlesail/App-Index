@@ -1,6 +1,9 @@
 -- ALittle Generate Lua And Do Not Edit This Line!
 do
 if _G.Index == nil then _G.Index = {} end
+local Index = Index
+local Lua = Lua
+local ALittle = ALittle
 local ___pairs = pairs
 local ___ipairs = ipairs
 local ___all_struct = ALittle.GetAllStruct()
@@ -25,8 +28,8 @@ option_map = {}
 })
 ALittle.RegStruct(-449066808, "ALittle.UIClickEvent", {
 name = "ALittle.UIClickEvent", ns_name = "ALittle", rl_name = "UIClickEvent", hash_code = -449066808,
-name_list = {"target","is_drag"},
-type_list = {"ALittle.DisplayObject","bool"},
+name_list = {"target","is_drag","count"},
+type_list = {"ALittle.DisplayObject","bool","int"},
 option_map = {}
 })
 
