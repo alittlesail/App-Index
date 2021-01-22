@@ -107,12 +107,9 @@ Index.GCenter = JavaScript.Class(undefined, {
 	HandleImageClick : function(event) {
 		let data = event.target._user_data;
 		let fixed_map = {};
-		fixed_map["139.159.176.119"] = true;
-		fixed_map["www.alittleide.com"] = true;
-		fixed_map["alittleide.com"] = true;
 		let base_url = "https://alittlesail.github.io/";
 		{
-			if (window.wx !== undefined) {
+			if (window.wx === undefined) {
 				base_url = location.protocol + "//" + location.host + "/";
 			}
 		}

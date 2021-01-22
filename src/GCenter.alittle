@@ -124,14 +124,10 @@ class GCenter
         var data:ItemData = event.target._user_data;
 
         var fixed_map = new Map<string, bool>();
-        fixed_map["139.159.176.119"] = true;
-        fixed_map["www.alittleide.com"] = true;
-        fixed_map["alittleide.com"] = true;
-
         var base_url = "https://alittlesail.github.io/";
         [Language(JavaScript)]
         {
-            if (window.wx != null)
+            if (window.wx == null)
             	base_url = location.protocol.."//"..location.host.."/";
         }
 
