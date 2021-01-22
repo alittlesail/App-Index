@@ -123,13 +123,17 @@ class GCenter
     {
         var data:ItemData = event.target._user_data;
 
-        var fixed_host = "139.159.176.119";
+        var fixed_map = new Map<string, bool>();
+        fixed_map["139.159.176.119"] = true;
+        fixed_map["www.alittleide.com"] = true;
+        fixed_map["alittleide.com"] = true;
 
-        var base_url = "http://"..fixed_host.."/";
+        var base_url = "https://alittlesail.github.io/";
         [Language(JavaScript)]
-        var host = location.host;
-        [Language(JavaScript)]
-        if (host != fixed_host) base_url = "https://alittlesail.github.io/";
+        {
+            if (window.wx != null)
+            	base_url = location.protocol.."//"..location.host.."/";
+        }
 
         [Language(Lua)]
         ALittle.System_OpenUrlBySystemBrowser(base_url..data.path);

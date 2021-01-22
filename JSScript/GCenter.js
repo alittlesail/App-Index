@@ -106,11 +106,15 @@ Index.GCenter = JavaScript.Class(undefined, {
 	},
 	HandleImageClick : function(event) {
 		let data = event.target._user_data;
-		let fixed_host = "139.159.176.119";
-		let base_url = "http://" + fixed_host + "/";
-		let host = location.host;
-		if (host !== fixed_host) {
-			base_url = "https://alittlesail.github.io/";
+		let fixed_map = {};
+		fixed_map["139.159.176.119"] = true;
+		fixed_map["www.alittleide.com"] = true;
+		fixed_map["alittleide.com"] = true;
+		let base_url = "https://alittlesail.github.io/";
+		{
+			if (window.wx !== undefined) {
+				base_url = location.protocol + "//" + location.host + "/";
+			}
 		}
 		window.open(base_url + data.path);
 	},
