@@ -123,13 +123,9 @@ class GCenter
     {
         var data:ItemData = event.target._user_data;
 
-        var fixed_map = new Map<string, bool>();
         var base_url = "https://alittlesail.github.io/";
         [Language(JavaScript)]
-        {
-            if (window.wx == null)
-            	base_url = location.protocol.."//"..location.host.."/";
-        }
+        base_url = location.protocol.."//"..location.host.."/";
 
         [Language(Lua)]
         ALittle.System_OpenUrlBySystemBrowser(base_url..data.path);

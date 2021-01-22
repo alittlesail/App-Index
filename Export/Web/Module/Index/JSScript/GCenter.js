@@ -106,13 +106,8 @@ Index.GCenter = JavaScript.Class(undefined, {
 	},
 	HandleImageClick : function(event) {
 		let data = event.target._user_data;
-		let fixed_map = {};
 		let base_url = "https://alittlesail.github.io/";
-		{
-			if (window.wx === undefined) {
-				base_url = location.protocol + "//" + location.host + "/";
-			}
-		}
+		base_url = location.protocol + "//" + location.host + "/";
 		window.open(base_url + data.path);
 	},
 	HandleGithubClick : function(event) {

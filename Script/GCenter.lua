@@ -113,8 +113,7 @@ end
 
 function Index.GCenter:HandleImageClick(event)
 	local data = event.target._user_data
-	local fixed_host = "139.159.176.119"
-	local base_url = "http://" .. fixed_host .. "/"
+	local base_url = "https://alittlesail.github.io/"
 	ALittle.System_OpenUrlBySystemBrowser(base_url .. data.path)
 end
 
